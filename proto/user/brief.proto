@@ -1,8 +1,0 @@
-syntax = "proto3";
-package brief;
-option go_package="protogrpcuser";
-
-message UserBrief {
-  string id = 1;
-  string name = 2;
-}

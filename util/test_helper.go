@@ -2,8 +2,6 @@ package util
 
 import (
 	"bytes"
-	"cashbag-me-mini/config"
-	"cashbag-me-mini/modules/zookeeper"
 	"context"
 	"encoding/json"
 	"fmt"
@@ -11,26 +9,30 @@ import (
 	"log"
 	"time"
 
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	"go.mongodb.org/mongo-driver/bson/primitive"
 
-	"cashbag-me-mini/modules/database"
-	"cashbag-me-mini/models"
+	"demo-user/config"
+	"demo-user/models"
+	"demo-user/modules/database"
+	"demo-user/modules/zookeeper"
 )
+
 var (
 	// UserString for test
 	UserString = "5f24d45125ea51bc57a8285a"
 
 	// UserID for test
 	UserID, _ = primitive.ObjectIDFromHex(UserString)
-		// User for test
-		User = models.UserBSON{
-			ID:      UserID,
-			Name:    "Phuc",
-			Address: "48 Nguyen Chanh",
-		}
+	// User for test
+	User = models.UserBSON{
+		ID:      UserID,
+		Name:    "Phuc",
+		Address: "48 Nguyen Chanh",
+	}
 )
+
 // HelperConnect ...
 func HelperConnect() {
 	zookeeper.Connect()

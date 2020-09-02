@@ -1,7 +1,7 @@
 package zookeeper
 
 import (
-	"cashbag-me-mini/config"
+	"demo-user/config"
 	"os"
 
 	"github.com/samuel/go-zookeeper/zk"
@@ -33,8 +33,10 @@ func Connect() {
 	// Database
 	databaseURI, _, _ := conn.Get("/database/uri")
 	envVars.Database.URI = string(databaseURI)
-	databaseName, _, _ := conn.Get("/database/name")
-	envVars.Database.Name = string(databaseName)
+	databaseTransactionName, _, _ := conn.Get("/database/name/transaction")
+	envVars.Database.TransactonName = string(databaseTransactionName)
+	databaseUserName, _, _ := conn.Get("/database/name/user")
+	envVars.Database.UserName = string(databaseUserName)
 	databaseTestName, _, _ := conn.Get("/database/test/name")
 	envVars.Database.TestName = string(databaseTestName)
 
@@ -43,8 +45,4 @@ func Connect() {
 	envVars.Redis.URI = string(redisURI)
 	redisPass, _, _ := conn.Get("/redis/pass")
 	envVars.Redis.Pass = string(redisPass)
-
-	// Users
-	userString, _, _ := conn.Get("/users")
-	envVars.UserString = string(userString)
 }

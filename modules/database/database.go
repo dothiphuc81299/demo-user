@@ -9,7 +9,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 
-	"cashbag-me-mini/config"
+	"demo-user/config"
 )
 
 var (
@@ -35,8 +35,8 @@ func Connect() {
 		log.Println(err)
 	}
 	client=cl
-	db = cl.Database(envVars.Database.Name)
-	fmt.Println("Database Connected to", envVars.Database.Name)
+	db = cl.Database(envVars.Database.UserName)
+	fmt.Println("Database Connected to", envVars.Database.UserName)
 }
 
 // GetClient ...

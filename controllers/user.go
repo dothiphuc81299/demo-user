@@ -4,9 +4,9 @@ import (
 	"github.com/labstack/echo/v4"
 	"go.mongodb.org/mongo-driver/bson"
 
-	"cashbag-me-mini/models"
-	"cashbag-me-mini/services"
-	"cashbag-me-mini/util"
+	"demo-user/models"
+	"demo-user/services"
+	"demo-user/util"
 )
 
 // UserCreate ...

@@ -6,13 +6,12 @@ import (
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 
-	"cashbag-me-mini/config"
-	"cashbag-me-mini/modules/database"
-	"cashbag-me-mini/modules/redis"
-	"cashbag-me-mini/modules/zookeeper"
-	"cashbag-me-mini/routes"
-
-
+	"demo-user/config"
+	"demo-user/modules/database"
+	"demo-user/modules/redis"
+	"demo-user/modules/zookeeper"
+	"demo-user/routes"
+	grpcserver "demo-user/grpc/server"
 )
 
 func init() {
@@ -20,6 +19,7 @@ func init() {
 	zookeeper.Connect()
 	database.Connect()
 	redis.Connect()
+	grpcserver.Start()
 }
 
 func main() {
@@ -41,8 +41,6 @@ func main() {
 	}))
 	server.Use(middleware.Recover())
 
-	
-	
 	routes.Boostrap(server)
 	server.Logger.Fatal(server.Start(envVars.AppPort))
 }

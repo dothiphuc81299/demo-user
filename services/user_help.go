@@ -1,7 +1,7 @@
 package services
 
 import (
-	"cashbag-me-mini/models"
+	"demo-user/models"
 	"time"
 
 	"go.mongodb.org/mongo-driver/bson/primitive"

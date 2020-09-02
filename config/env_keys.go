@@ -14,9 +14,10 @@ type ENV struct {
 
 	// Database
 	Database struct {
-		URI      string
-		Name     string
-		TestName string
+		URI            string
+		TransactonName string
+		TestName       string
+		UserName       string
 	}
 
 	// Redis
@@ -25,7 +26,7 @@ type ENV struct {
 		Pass string
 	}
 
-	UserString string
+	GRPCUri string
 }
 
 var env ENV

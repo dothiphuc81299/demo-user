@@ -8,7 +8,6 @@ import (
 
 	"demo-user/config"
 	"demo-user/modules/database"
-	"demo-user/modules/redis"
 	"demo-user/modules/zookeeper"
 	"demo-user/routes"
 	grpcserver "demo-user/grpc/server"
@@ -18,7 +17,6 @@ func init() {
 	config.InitENV()
 	zookeeper.Connect()
 	database.Connect()
-	redis.Connect()
 	grpcserver.Start()
 }
 
@@ -42,5 +40,5 @@ func main() {
 	server.Use(middleware.Recover())
 
 	routes.Boostrap(server)
-	server.Logger.Fatal(server.Start(envVars.AppPort))
+	server.Logger.Fatal(server.Start(envVars.AppUserPort))
 }

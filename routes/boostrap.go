@@ -6,7 +6,5 @@ import (
 
 // Boostrap ...
 func Boostrap(e *echo.Echo) {
-	
 	User(e)
-	
 }

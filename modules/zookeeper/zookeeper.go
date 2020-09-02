@@ -27,22 +27,18 @@ func Connect() {
 
 	// Get env key
 	// App port
-	appPort, _, _ := conn.Get("/app/port")
-	envVars.AppPort = string(appPort)
+	appUserPort, _, _ := conn.Get("/app/port/user")
+	envVars.AppUserPort = string(appUserPort)
 
 	// Database
 	databaseURI, _, _ := conn.Get("/database/uri")
 	envVars.Database.URI = string(databaseURI)
-	databaseTransactionName, _, _ := conn.Get("/database/name/transaction")
-	envVars.Database.TransactonName = string(databaseTransactionName)
 	databaseUserName, _, _ := conn.Get("/database/name/user")
 	envVars.Database.UserName = string(databaseUserName)
 	databaseTestName, _, _ := conn.Get("/database/test/name")
 	envVars.Database.TestName = string(databaseTestName)
 
-	// Redis
-	redisURI, _, _ := conn.Get("/redis/uri")
-	envVars.Redis.URI = string(redisURI)
-	redisPass, _, _ := conn.Get("/redis/pass")
-	envVars.Redis.Pass = string(redisPass)
+	// GRPC
+	grpcURI, _, _ := conn.Get("/grpc/uri")
+	envVars.GRPCUri = string(grpcURI)
 }

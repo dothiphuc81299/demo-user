@@ -53,7 +53,7 @@ func Start() {
 	s := grpc.NewServer()
 	userpb.RegisterUserServiceServer(s, &server{})
 
-	log.Println(" gRPC server started on port 9000")
+	log.Println(" gRPC server started on port:"+envVars.GRPCUri)
 
 	err = s.Serve(lis)
 	if err != nil {

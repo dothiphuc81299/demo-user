@@ -1,0 +1,18 @@
+syntax = "proto3";
+package user;
+option go_package="protogrpcuser";
+import "brief.proto";
+
+message GetBriefByIDsRequest {
+  repeated string ids = 1;
+}
+
+message GetBriefByIDsResponse {
+  repeated brief.UserBrief users = 1;
+}
+
+// List rpc services
+service User {
+  // Get brief data of array brands
+  rpc GetBriefByIDs(GetBriefByIDsRequest) returns (GetBriefByIDsResponse) {};
+}

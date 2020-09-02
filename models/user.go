@@ -31,7 +31,7 @@ type (
 
 	// UserBrief ...
 	UserBrief struct {
-		ID   primitive.ObjectID `json:"_id"`
-		Name string             `json:"name"`
+		ID   primitive.ObjectID 
+		Name string             
 	}
 )

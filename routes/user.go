@@ -3,8 +3,8 @@ package routes
 import (
 	"github.com/labstack/echo/v4"
 
-	"cashbag-me-mini/controllers"
-	"cashbag-me-mini/validations"
+	"demo-user/controllers"
+	"demo-user/validations"
 )
 
 // User ...

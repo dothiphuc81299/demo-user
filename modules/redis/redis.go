@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"log"
 
-	"cashbag-me-mini/config"
+	"demo-user/config"
 )
 
 var (

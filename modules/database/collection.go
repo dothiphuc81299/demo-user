@@ -6,13 +6,10 @@ import (
 
 // Collection name
 const (
-	
-	users                    = "users"
+	users = "users"
 )
-
 
 // UserCol ...
 func UserCol() *mongo.Collection {
 	return db.Collection(users)
 }
-

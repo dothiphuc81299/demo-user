@@ -4,8 +4,8 @@ import (
 	"github.com/asaskevich/govalidator"
 	"github.com/labstack/echo/v4"
 
-	"cashbag-me-mini/models"
-	"cashbag-me-mini/util"
+	"demo-user/models"
+	"demo-user/util"
 )
 
 // UserCreate ...

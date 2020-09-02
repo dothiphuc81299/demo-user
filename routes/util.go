@@ -4,8 +4,8 @@ import (
 	"github.com/labstack/echo/v4"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 
-	"cashbag-me-mini/dao"
-	"cashbag-me-mini/util"
+	"demo-user/dao"
+	"demo-user/util"
 )
 
 func userCheckExistedByID(next echo.HandlerFunc) echo.HandlerFunc {

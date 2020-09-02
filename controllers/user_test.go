@@ -10,8 +10,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"cashbag-me-mini/models"
-	"cashbag-me-mini/util"
+	"demo-user/models"
+	"demo-user/util"
 )
 
 type UserSuite struct {

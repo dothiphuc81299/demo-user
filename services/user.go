@@ -7,8 +7,8 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 
-	"cashbag-me-mini/dao"
-	"cashbag-me-mini/models"
+	"demo-user/dao"
+	"demo-user/models"
 )
 
 // UserCreate ...

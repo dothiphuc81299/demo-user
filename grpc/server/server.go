@@ -1,23 +1,22 @@
 package grpcserver
 
 import (
-	"demo-user/dao"
+	"context"
 	"errors"
+	"log"
+	"net"
 
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"google.golang.org/grpc"
 
-	"context"
-	"log"
-	"net"
-
 	"demo-user/config"
+	"demo-user/dao"
 	userpb "demo-user/proto"
 )
 
 type server struct{}
 
-// GetUserBriefByID 
+// GetUserBriefByID
 func (s *server) GetUserBriefByID(ctx context.Context, req *userpb.GetUserBriefByIDRequest) (*userpb.GetUserBriefByIDResponse, error) {
 	// Convert to ObjectID
 	objectID, err := primitive.ObjectIDFromHex(req.GetId())
@@ -43,6 +42,7 @@ func (s *server) GetUserBriefByID(ctx context.Context, req *userpb.GetUserBriefB
 	return response, nil
 }
 
+// Start ...
 func Start() {
 	envVars := config.GetEnv()
 	lis, err := net.Listen("tcp", envVars.GRPCUri)

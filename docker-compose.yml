@@ -8,7 +8,7 @@ services:
             - ZOOKEEPER_URI=zookeeper:1234
         build: .
         ports:
-            - "8000:8000"
+            - "8081:8081"
         networks: 
             - web-go
     zookeeper:

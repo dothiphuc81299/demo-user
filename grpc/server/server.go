@@ -11,7 +11,7 @@ import (
 
 	"demo-user/config"
 	"demo-user/dao"
-	userpb "demo-user/proto"
+	userpb "demo-user/proto/models/user"
 )
 
 type server struct{}
@@ -53,7 +53,7 @@ func Start() {
 	s := grpc.NewServer()
 	userpb.RegisterUserServiceServer(s, &server{})
 
-	log.Println(" gRPC server started on port:"+envVars.GRPCUri)
+	log.Println(" gRPC server started on port:" + envVars.GRPCUri)
 
 	err = s.Serve(lis)
 	if err != nil {

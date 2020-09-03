@@ -17,7 +17,6 @@ func init() {
 	config.InitENV()
 	zookeeper.Connect()
 	database.Connect()
-	grpcserver.Start()
 }
 
 func main() {
@@ -40,5 +39,11 @@ func main() {
 	server.Use(middleware.Recover())
 
 	routes.Boostrap(server)
+
+	// GRPC start
+	go func() {
+		grpcserver.Start()
+	}()
+
 	server.Logger.Fatal(server.Start(envVars.AppUserPort))
 }

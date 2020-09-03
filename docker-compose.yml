@@ -17,7 +17,7 @@ services:
         restart: always
         hostname: zoo1
         volumes:
-            - /home/phuc/demo-user/zoo:/data
+            - /home/hoang/zookeeper:/data
         ports:
             - 1234:1234
         networks: 

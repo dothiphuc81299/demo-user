@@ -11,7 +11,7 @@ import (
 
 	"demo-user/config"
 	"demo-user/dao"
-	userpb "demo-user/proto"
+	userpb "demo-user/proto/models/user"
 )
 
 type server struct{}
